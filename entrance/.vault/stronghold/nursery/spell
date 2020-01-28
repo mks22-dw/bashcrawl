@@ -1,0 +1,315 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds
+# and are reading the code that drives the game.
+#
+#                    Congratulations!
+#
+# Learning Linux is all about curiosity, so read this code and see
+# if you can figure out what it does.
+#
+# When you're ready to continue playing the game, though, stick to
+# the scrolls. If you're stuck, go to Gitlab and create an issue.
+# We're happy to provide hints.
+#
+if [[ -e potion ]]; then
+   echo "You have summoned a potion from afar."
+   echo "You drink it quickly and feel a surge of strength."
+   echo "Add 5 HP to your score."
+else
+   echo "A page from a druid's tome of incantations lies on the ground."
+   echo "It reveals to you how to summon a healing potion:"
+   printf "\n"
+   echo "# To find a file on your system, use the find command."
+   echo '# For example, to search this room: find . -name "potion"'
+   echo "# Once you've found a potion, copy it to this directory"
+   echo "# and run this spell script again."
+   printf "\n"
+   echo "There are no potions in this room."
+   echo "But try searching starting at the entrance."
+   printf "\n"
+   echo "Hint: use pwd to determine how many rooms (folders)"
+   echo "are between you and the entrance."
+   printf "\n"
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./spell
+

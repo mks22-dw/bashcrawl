@@ -1,0 +1,394 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds
+# and are reading the code that drives the game.
+#
+#                    Congratulations!
+#
+# Learning Linux is all about curiosity, so read this code and see
+# if you can figure out what it does.
+#
+# When you're ready to continue playing the game, though, stick to
+# the scrolls. If you're stuck, go to Gitlab and create an issue.
+# We're happy to provide hints.
+#
+gameover () {
+    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
+    echo "You find the following items on the corpse:  " >> corpse
+    echo >> corpse
+    echo $I >> corpse
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+roll() {
+    echo "Enter a number."
+    read NUM
+    ALPHA=$RANDOM
+    OMEGA=$RANDOM
+    A=`echo $ALPHA | cut -b 1-2`
+    O=`echo $OMEGA | cut -b 1-2`
+    let "NUM=$ALPHA % $OMEGA"
+    MONSTER=$RANDOM
+    MONSTER=`echo $MONSTER | cut -b 1-2`
+    NUM=`echo $NUM | cut -b 1-2`
+
+    echo "The monster rolled " $MONSTER
+    echo "You rolled " $NUM
+    
+    if [ -e ../../../glass/.bless ]; then
+	let "NUM=NUM+2"
+	echo "+2 bonus from a mysterious wintry patron!"
+    fi
+    resolve
+}
+
+resolve() {
+    if [[ $MONSTER -eq $NUM ]]; then
+	echo "You dodge an attack, but you miss your mark as a result."
+	echo "Roll again..."
+	roll
+    fi
+    
+    if [[ $MONSTER -lt $NUM ]]; then
+       echo "A hit! A palpable hit!"
+       echo "You have slain the spirit of the evil wizard."
+       echo '#!/bin/sh
+            if ! grep -Po emerald <<< $I &> /dev/null; then
+                echo "You have found an *emerald*!"
+                echo "Add it to your inventory."
+            else
+                echo "This treasure has already been taken."
+            fi' > treasure
+       chmod +x treasure
+       echo '#!/bin/sh
+             if ! grep -Po platinum <<< $I &> /dev/null; then
+                 echo "You have found a sack full of *platinum* coins!"
+                 echo "Add it to your inventory." 
+             else
+                 echo "This treasure has already been taken."
+             fi' > platinum
+       chmod +x platinum
+    else
+	echo "Your sword swings harmlessly through the air."
+	echo "You take 5 points damage. Deduct this from your HP variable:"
+	echo 'let "HP=HP-5"'
+    let HP=HP-5
+    if [ "$HP" -le 0 ]; then
+        echo "You suddenly feel cold, the life force draining from your body."
+        echo "You have been slain by the ghost of an evil wizard."
+        echo
+        echo "GAME OVER!"
+        gameover
+        exit 1
+    fi
+	printf "\n"
+	roll
+    fi
+}
+
+echo "The room shakes, a gust of wind blasts you from nowhere."
+echo "You sense that a presence has entered the room."
+echo "The pain you suddenly feel assures you that you are under attack by a ghostly entity!"
+printf "\n"
+
+echo "If you have a sword, you can attack."
+echo "Otherwise, you should run."
+echo "Do you want to attack? y/n"
+read RESP
+
+if [ $RESP = "y" -o $RESP = "Y" ];then
+    roll
+    resolve
+else
+    echo "You wisely turn and flee."
+    echo "Quickly cd to the previous directory."
+fi
+printf "\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./ghost
+

@@ -1,0 +1,327 @@
+#!/bin/bash
+#
+#
+# If you are reading this, you have wandered out of bounds
+# and are reading the code that drives the game.
+#
+#                    Congratulations!
+#
+# Learning Linux is all about curiosity, so read this code and see
+# if you can figure out what it does.
+#
+# When you're ready to continue playing the game, though, stick to
+# the scrolls. If you're stuck, go to Gitlab and create an issue.
+# We're happy to provide hints.
+# 
+if [[ -e goblet-light && -e goblet-dark ]]; then
+   echo "You have united the gobllet's ethereal forms."
+   echo "Add the goblet to your inventory."
+   exit
+else 
+    echo "You try to grasp the faintly glowing goblet,"
+    echo "but it passes through your fingers."
+fi
+
+printf "\n"
+echo "Are you stuck? Do you need a hint? y/n"
+read RESP
+
+if [ $RESP = "y" -o $RESP = "Y" ]; then
+ echo "Try searching opensource.com for"
+ echo "hints on how to copy files."
+ printf "\n"
+ echo "Still stuck? Do you need the answer? y/n"
+ read RESP
+
+ if [ $RESP = "y" -o $RESP = "Y" ]; then
+     echo "The cp command copies one file to another."
+     echo "Run this command:"
+     echo "$ cp goblet-light goblet-dark"
+     printf "\n"
+     echo "And then run this goblet script again"
+     echo "for confirmation."
+ fi
+fi
+
+printf "\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./goblet
+
