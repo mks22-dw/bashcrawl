@@ -29,3 +29,7 @@ Type this into your terminal:
 ```
 cat scroll
 ```
+
+
+This entire work was taken from: https://gitlab.com/slackermedia/bashcrawl
+Issues were fixed for this port.
